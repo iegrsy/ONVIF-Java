@@ -9,7 +9,7 @@ buildscript {
 }
 
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
 group 'be.teletask.onvif'
@@ -124,27 +124,27 @@ artifacts {
     archives sourcesJar
 }
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
+// Properties properties = new Properties()
+// properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+// bintray {
+//     user = properties.getProperty("bintray.user")
+//     key = properties.getProperty("bintray.apikey")
 
-    configurations = ['archives']
-    pkg {
-        repo = bintrayRepo
-        name = bintrayName
-        desc = libraryDescription
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = allLicenses
-        dryRun = false
-        publish = true
-        override = false
-        publicDownloadNumbers = true
-        version {
-            desc = libraryDescription
-        }
-    }
-}
+//     configurations = ['archives']
+//     pkg {
+//         repo = bintrayRepo
+//         name = bintrayName
+//         desc = libraryDescription
+//         websiteUrl = siteUrl
+//         vcsUrl = gitUrl
+//         licenses = allLicenses
+//         dryRun = false
+//         publish = true
+//         override = false
+//         publicDownloadNumbers = true
+//         version {
+//             desc = libraryDescription
+//         }
+//     }
+// }
